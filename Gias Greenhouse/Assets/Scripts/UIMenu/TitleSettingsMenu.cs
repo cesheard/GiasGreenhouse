@@ -9,13 +9,10 @@ using TMPro;
 
 public class TitleSettingsMenu : MonoBehaviour
 {
-    //public MenuCamera menuCam;
     public GameObject titleMenuUI;
     public GameObject settingsMenuUI;
-    //public GameObject optionsProfileMenuUI;
     public GameObject optionsAudioMenuUI;
     public GameObject optionsGraphicsMenuUI;
-    //public GameObject optionsControlsMenuUI;
     private bool firstToggle = true;
 
     public TMP_Dropdown fsDropdown;
@@ -23,39 +20,21 @@ public class TitleSettingsMenu : MonoBehaviour
     Resolution[] resolutions;
     public TMP_Dropdown qualityDropdown;
 
-    //public bool canClickButton = false;
-
-    //public TMP_Dropdown ssDropdown;
-    //public TMP_InputField usernameInput;
-    //public GameObject usernameEnterPrompt;
-
-    //public Toggle promptToggle;
-
-    //public GameObject keyboardBindings;
-    //public GameObject gamepadBindings;
-
-    // Start is called before the first frame update
     void Start()
     {
-        //menuCam = GameObject.FindObjectOfType<MenuCamera>();
-
-        //StartCoroutine("CanClick");
-
         settingsMenuUI.SetActive(false);
         optionsGraphicsMenuUI.SetActive(false);
-        //optionsControlsMenuUI.SetActive(false);
         optionsAudioMenuUI.SetActive(false);
 
         resolutions = Screen.resolutions;
-        //resolutionDropdown.ClearOptions();
-        List<string> options = new List<string>();      // The list of resolutions that is shown to the player?
+        List<string> options = new List<string>();      // The list of resolutions that is shown to the player
         int currentResolutionIndex = 0;
         for (int i = 0; i < resolutions.Length; i++)
         {
             string option = resolutions[i].width + " x " + resolutions[i].height + " @" + resolutions[i].refreshRate + "hz";
             options.Add(option);
 
-            if (PlayerPrefs.GetInt("SelectedResolution", -1) == -1)       // First time playing (or never changed resolution??)
+            if (PlayerPrefs.GetInt("SelectedResolution", -1) == -1)       // First time playing (or never changed resolution)
             {
                 if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
                 {
@@ -79,25 +58,7 @@ public class TitleSettingsMenu : MonoBehaviour
         int selectedQualityPref = PlayerPrefs.GetInt("SelectedQuality", 3);
         qualityDropdown.value = selectedQualityPref;
         SetQuality(selectedQualityPref);
-
-        int selectedServer = PlayerPrefs.GetInt("SelectedServer", 0);
-        //ssDropdown.value = selectedServer;
-
-        /*if (PlayerPrefs.GetInt("PromptsToggle", 1) == 1){
-            promptToggle.isOn = true;
-        }
-        else
-        {
-            promptToggle.isOn = false;
-        }*/
     }
-
-    /*public IEnumerator CanClick()
-    {
-        yield return new WaitForSeconds(3f);
-        canClickButton = true;
-        ssDropdown.interactable = true;
-    }*/
 
     // Update is called once per frame
     void Update()
@@ -107,7 +68,8 @@ public class TitleSettingsMenu : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
-    }
+
+    } // End of PlayGame()
 
     public void LoadOptions()
     {
@@ -119,7 +81,6 @@ public class TitleSettingsMenu : MonoBehaviour
             LoadAudio();
             firstToggle = false;
         }
-        //audioSource.Play();
 
     } // End of LoadOptions()
 
@@ -130,112 +91,31 @@ public class TitleSettingsMenu : MonoBehaviour
 
     } // End of OptionsBack()
 
-    /*public void LoadProfile()
-    {
-        if (canClickButton)
-        {
-            optionsProfileMenuUI.SetActive(true);
-            optionsGraphicsMenuUI.SetActive(false);
-            optionsControlsMenuUI.SetActive(false);
-            optionsAudioMenuUI.SetActive(false);
-        }
-    }*/
-
-    /*public void ProfileBack()
-    {
-        if (canClickButton)
-        {
-            optionsProfileMenuUI.SetActive(false);
-            optionsGraphicsMenuUI.SetActive(false);
-            optionsControlsMenuUI.SetActive(false);
-            optionsAudioMenuUI.SetActive(false);
-        }
-    }*/
-
     public void LoadGraphics()
     {
         optionsGraphicsMenuUI.SetActive(true);
         optionsAudioMenuUI.SetActive(false);
-        /*if (canClickButton)
-        {
-            optionsProfileMenuUI.SetActive(false);
-            optionsGraphicsMenuUI.SetActive(true);
-            optionsControlsMenuUI.SetActive(false);
-            optionsAudioMenuUI.SetActive(false);
-            //audioSource.Play();
-        }*/
+
     } // End of Graphics()
 
     public void LoadControls()
     {
         optionsGraphicsMenuUI.SetActive(false);
         optionsAudioMenuUI.SetActive(false);
-        /*if (canClickButton)
-        {
-            optionsProfileMenuUI.SetActive(false);
-            optionsGraphicsMenuUI.SetActive(false);
-            optionsControlsMenuUI.SetActive(true);
-            optionsAudioMenuUI.SetActive(false);
-            //audioSource.Play();
-            //keyboardBindings.SetActive(Gamepad.current == null);
-            //gamepadBindings.SetActive(Gamepad.current != null);
 
-        }*/
     } // End of Controls()
 
     public void LoadAudio()
     {
         optionsGraphicsMenuUI.SetActive(false);
         optionsAudioMenuUI.SetActive(true);
-        /*if (canClickButton)
-        {
-            optionsProfileMenuUI.SetActive(false);
-            optionsGraphicsMenuUI.SetActive(false);
-            optionsControlsMenuUI.SetActive(false);
-            optionsAudioMenuUI.SetActive(true);
-            //audioSource.Play();
-        }*/
+
     } // End of Audio()
-
-    /*public void GoToLobby()
-    {
-        if (canClickButton)
-        {
-            menuCam.GoToElevator();
-        }
-    }
-
-    public void LoadSettings()
-    {
-        if (canClickButton)
-        {
-            menuCam.GoToSettings();
-        }
-    }
-
-    public void BackToTitle()
-    {
-        if(usernameInput.text.Length == 0)
-        {
-            usernameEnterPrompt.SetActive(true);
-        }
-        else if (canClickButton)
-        {
-            usernameEnterPrompt.SetActive(false);
-            menuCam.GoToTitle();
-        }
-    }*/
 
     public void QuitGame()
     {
         Debug.Log("Quitting the game...");
         Application.Quit();
-        /*if (canClickButton)
-        {
-            //audioSource.Play();
-            Debug.Log("Quitting the game...");
-            Application.Quit();
-        }*/
 
     } // End of QuitGame()
 
@@ -283,53 +163,4 @@ public class TitleSettingsMenu : MonoBehaviour
             PlayerPrefs.SetInt("SelectedFullscreenMode", 3);
         }
     }
-/*
-    public void ServerSelection()
-    {
-        switch (ssDropdown.options[ssDropdown.value].text)
-        {
-            case ("North America East"):
-                Debug.Log("USE");
-                PhotonNetwork.PhotonServerSettings.AppSettings.FixedRegion = "us";
-                PlayerPrefs.SetInt("SelectedServer", 0);
-                break;
-
-            case ("North America West"):
-                Debug.Log("USW");
-                PhotonNetwork.PhotonServerSettings.AppSettings.FixedRegion = "usw";
-                PlayerPrefs.SetInt("SelectedServer", 1);
-                break;
-
-            case ("Europe"):
-                Debug.Log("EU");
-                PhotonNetwork.PhotonServerSettings.AppSettings.FixedRegion = "eu";
-                PlayerPrefs.SetInt("SelectedServer", 2);
-                break;
-
-            case ("Asia"):
-                Debug.Log("ASIA");
-                PhotonNetwork.PhotonServerSettings.AppSettings.FixedRegion = "asia";
-                PlayerPrefs.SetInt("SelectedServer", 3);
-                break;
-
-            default:
-                Debug.Log("DEFAULT US");
-                PhotonNetwork.PhotonServerSettings.AppSettings.FixedRegion = "us";
-                PlayerPrefs.SetInt("SelectedServer", 0);
-                break;
-        }
-        
-    }*/
-/*
-    public void SetPromptToggle()
-    {
-        if (promptToggle.isOn)
-        {
-            PlayerPrefs.SetInt("PromptsToggle", 1);
-        }
-        else
-        {
-            PlayerPrefs.SetInt("PromptsToggle", 0);
-        }
-    }*/
 }
