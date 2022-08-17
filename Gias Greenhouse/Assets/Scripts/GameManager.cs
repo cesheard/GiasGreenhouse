@@ -14,19 +14,11 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        /*// Assign a planter and plant for each tall plantPlaceholder
-        foreach (GameObject plantPlaceholder in tallPlantPlaceholders){
-            for (int i=0; i < plantTypes.Length; i++){
-                for (int j = 0; j < planterTypes.Length; j++){
-                    if 
-                }
-            }
-        }
 
-        // Assign a planter and plant for each short plantPlaceholder
+        // Start growing the plants?
         foreach (GameObject plantPlaceholder in shortPlantPlaceholders){
             
-        }*/
+        }
     }
 
     void Start()
