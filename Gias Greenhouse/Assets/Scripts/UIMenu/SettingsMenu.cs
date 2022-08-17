@@ -10,11 +10,12 @@ using TMPro;
 public class SettingsMenu : MonoBehaviour
 {
     //public MenuCamera menuCam;
-    public GameObject optionsMenuUI;
-    public GameObject optionsProfileMenuUI;
-    public GameObject optionsGraphicsMenuUI;
-    public GameObject optionsControlsMenuUI;
+    public GameObject titleMenuUI;
+    public GameObject settingsMenuUI;
+    //public GameObject optionsProfileMenuUI;
     public GameObject optionsAudioMenuUI;
+    public GameObject optionsGraphicsMenuUI;
+    //public GameObject optionsControlsMenuUI;
     private bool firstToggle = true;
 
     public TMP_Dropdown fsDropdown;
@@ -22,16 +23,16 @@ public class SettingsMenu : MonoBehaviour
     Resolution[] resolutions;
     public TMP_Dropdown qualityDropdown;
 
-    public bool canClickButton = false;
+    //public bool canClickButton = false;
 
-    public TMP_Dropdown ssDropdown;
-    public TMP_InputField usernameInput;
-    public GameObject usernameEnterPrompt;
+    //public TMP_Dropdown ssDropdown;
+    //public TMP_InputField usernameInput;
+    //public GameObject usernameEnterPrompt;
 
-    public Toggle promptToggle;
+    //public Toggle promptToggle;
 
-    public GameObject keyboardBindings;
-    public GameObject gamepadBindings;
+    //public GameObject keyboardBindings;
+    //public GameObject gamepadBindings;
 
     // Start is called before the first frame update
     void Start()
@@ -40,9 +41,9 @@ public class SettingsMenu : MonoBehaviour
 
         //StartCoroutine("CanClick");
 
-        optionsMenuUI.SetActive(true);
+        settingsMenuUI.SetActive(false);
         optionsGraphicsMenuUI.SetActive(false);
-        optionsControlsMenuUI.SetActive(false);
+        //optionsControlsMenuUI.SetActive(false);
         optionsAudioMenuUI.SetActive(false);
 
         resolutions = Screen.resolutions;
@@ -80,15 +81,15 @@ public class SettingsMenu : MonoBehaviour
         SetQuality(selectedQualityPref);
 
         int selectedServer = PlayerPrefs.GetInt("SelectedServer", 0);
-        ssDropdown.value = selectedServer;
+        //ssDropdown.value = selectedServer;
 
-        if (PlayerPrefs.GetInt("PromptsToggle", 1) == 1){
+        /*if (PlayerPrefs.GetInt("PromptsToggle", 1) == 1){
             promptToggle.isOn = true;
         }
         else
         {
             promptToggle.isOn = false;
-        }
+        }*/
     }
 
     /*public IEnumerator CanClick()
@@ -106,9 +107,11 @@ public class SettingsMenu : MonoBehaviour
     public void LoadOptions()
     {
         Debug.Log("Loading the options...");
+        titleMenuUI.SetActive(false);
+        settingsMenuUI.SetActive(true);
         if (firstToggle)
         {
-            LoadProfile();
+            LoadAudio();
             firstToggle = false;
         }
         //audioSource.Play();
@@ -117,10 +120,12 @@ public class SettingsMenu : MonoBehaviour
 
     public void OptionsBack()
     {
+        titleMenuUI.SetActive(true);
+        settingsMenuUI.SetActive(false);
 
     } // End of OptionsBack()
 
-    public void LoadProfile()
+    /*public void LoadProfile()
     {
         if (canClickButton)
         {
@@ -129,9 +134,9 @@ public class SettingsMenu : MonoBehaviour
             optionsControlsMenuUI.SetActive(false);
             optionsAudioMenuUI.SetActive(false);
         }
-    }
+    }*/
 
-    public void ProfileBack()
+    /*public void ProfileBack()
     {
         if (canClickButton)
         {
@@ -140,23 +145,27 @@ public class SettingsMenu : MonoBehaviour
             optionsControlsMenuUI.SetActive(false);
             optionsAudioMenuUI.SetActive(false);
         }
-    }
+    }*/
 
     public void LoadGraphics()
     {
-        if (canClickButton)
+        optionsGraphicsMenuUI.SetActive(true);
+        optionsAudioMenuUI.SetActive(false);
+        /*if (canClickButton)
         {
             optionsProfileMenuUI.SetActive(false);
             optionsGraphicsMenuUI.SetActive(true);
             optionsControlsMenuUI.SetActive(false);
             optionsAudioMenuUI.SetActive(false);
             //audioSource.Play();
-        }
+        }*/
     } // End of Graphics()
 
     public void LoadControls()
     {
-        if (canClickButton)
+        optionsGraphicsMenuUI.SetActive(false);
+        optionsAudioMenuUI.SetActive(false);
+        /*if (canClickButton)
         {
             optionsProfileMenuUI.SetActive(false);
             optionsGraphicsMenuUI.SetActive(false);
@@ -166,19 +175,21 @@ public class SettingsMenu : MonoBehaviour
             //keyboardBindings.SetActive(Gamepad.current == null);
             //gamepadBindings.SetActive(Gamepad.current != null);
 
-        }
+        }*/
     } // End of Controls()
 
     public void LoadAudio()
     {
-        if (canClickButton)
+        optionsGraphicsMenuUI.SetActive(false);
+        optionsAudioMenuUI.SetActive(true);
+        /*if (canClickButton)
         {
             optionsProfileMenuUI.SetActive(false);
             optionsGraphicsMenuUI.SetActive(false);
             optionsControlsMenuUI.SetActive(false);
             optionsAudioMenuUI.SetActive(true);
             //audioSource.Play();
-        }
+        }*/
     } // End of Audio()
 
     /*public void GoToLobby()
@@ -212,12 +223,14 @@ public class SettingsMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        if (canClickButton)
+        Debug.Log("Quitting the game...");
+        Application.Quit();
+        /*if (canClickButton)
         {
             //audioSource.Play();
             Debug.Log("Quitting the game...");
             Application.Quit();
-        }
+        }*/
 
     } // End of QuitGame()
 

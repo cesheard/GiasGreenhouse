@@ -11,18 +11,18 @@ using UnityEngine.EventSystems;
 public class PauseMenu : MonoBehaviour
 {
     // -- Declared Variables -- //
-    private const string GameVersion = "0.2";
-    [SerializeField] private Button lobbyButton = null;
+    //private const string GameVersion = "0.2";
+    //[SerializeField] private Button lobbyButton = null;
 
     public static bool gameIsPaused = false;
     public static bool canToggle = true;
     public GameObject pauseMenuParentObj;
     public GameObject pauseMenuUI;
     public GameObject mainMenuUI;
-    public GameObject usernameUI;
+    //public GameObject usernameUI;
     public GameObject optionsMenuUI;
     public GameObject optionsGraphicsMenuUI;
-    public GameObject optionsControlsMenuUI;
+    //public GameObject optionsControlsMenuUI;
     public GameObject optionsAudioMenuUI;
     public AudioSource audioSource;
     public AudioMixer audioMixer;
@@ -56,7 +56,7 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = false;
         optionsMenuUI.SetActive(false);
         optionsGraphicsMenuUI.SetActive(false);
-        optionsControlsMenuUI.SetActive(false);
+        //optionsControlsMenuUI.SetActive(false);
         optionsAudioMenuUI.SetActive(false);
         eventSystem = GameObject.FindObjectOfType<EventSystem>();
         resolutions = Screen.resolutions;
@@ -98,7 +98,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (usernameUI != null && lobbyButton != null)
+        /*if (usernameUI != null && lobbyButton != null)
         {
             string playerName = PlayerPrefs.GetString("PlayerName");
             //Debug.Log(playerName);
@@ -110,7 +110,7 @@ public class PauseMenu : MonoBehaviour
             {
                 lobbyButton.interactable = false;
             }
-        }
+        }*/
         
     } // End of Update()
     public void PauseToggle()
@@ -130,7 +130,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void GoToLobby()
+    public void GoTitleMenu()
     {
         /*if (!PhotonNetwork.IsConnected)
         {
@@ -143,7 +143,7 @@ public class PauseMenu : MonoBehaviour
         PhotonNetwork.AutomaticallySyncScene = true;
         // Goes to the Scene at index 1, which is the username scene
         audioSource.Play();*/
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
     public void Pause()
@@ -176,26 +176,26 @@ public class PauseMenu : MonoBehaviour
         canToggle = true;
     }
 
-    public void LoadUsername()
+    /*public void LoadUsername()
     {
         mainMenuUI.SetActive(false);
         optionsMenuUI.SetActive(false);
         usernameUI.SetActive(true);
-    }
+    }*/
 
-    public void UsernameBack()
+    /*public void UsernameBack()
     {
         mainMenuUI.SetActive(true);
         usernameUI.SetActive(false);
-    }
+    }*/
 
-    public void LoadMainMenu()
+    /*public void LoadMainMenu()
     {
         audioSource.Play();
         //Time.timeScale = 1;
         Debug.Log("Loading the Main Menu...");
 
-    } // End of LoadMainMenu()
+    } // End of LoadMainMenu()*/
 
     public void LoadOptions()
     {
@@ -226,31 +226,31 @@ public class PauseMenu : MonoBehaviour
     public void LoadGraphics()
     {
         optionsGraphicsMenuUI.SetActive(true);
-        optionsControlsMenuUI.SetActive(false);
+        //optionsControlsMenuUI.SetActive(false);
         optionsAudioMenuUI.SetActive(false);
         audioSource.Play();
         //eventSystem.GetComponent<ControllerDetector>().HighlightButton(graphicsButton);
     } // End of Graphics()
 
-    public void LoadControls()
+    /*public void LoadControls()
     {
         optionsGraphicsMenuUI.SetActive(false);
-        optionsControlsMenuUI.SetActive(true);
+        //optionsControlsMenuUI.SetActive(true);
         optionsAudioMenuUI.SetActive(false);
         audioSource.Play();
-    } // End of Controls()
+    } // End of Controls()*/
 
     public void LoadAudio()
     {
         optionsGraphicsMenuUI.SetActive(false);
-        optionsControlsMenuUI.SetActive(false);
+        //optionsControlsMenuUI.SetActive(false);
         optionsAudioMenuUI.SetActive(true);
         audioSource.Play();
     } // End of Audio()
 
     public void QuitGame()
     {
-        audioSource.Play();
+        //audioSource.Play();
         Debug.Log("Quitting the game...");
         Application.Quit();
 
