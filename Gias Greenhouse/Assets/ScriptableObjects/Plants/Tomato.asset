@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Tomato
   m_EditorClassIdentifier: 
   plantName: Tomato
-  plantType: 0
-  growTime: 5
-  stage1: {fileID: 21300000, guid: db0f151bf12c50f4ab5f4f4e47a00498, type: 3}
-  stage2: {fileID: 21300000, guid: 8f70c6cbd12c3f649811e40687623579, type: 3}
-  stage3: {fileID: 21300000, guid: 275032014792c8a46b6f53837e39a252, type: 3}
-  stage4: {fileID: 21300000, guid: f53d4f89f88b02542ab918bc5466b5ed, type: 3}
+  stages:
+  - {fileID: 21300000, guid: db0f151bf12c50f4ab5f4f4e47a00498, type: 3}
+  - {fileID: 21300000, guid: 8f70c6cbd12c3f649811e40687623579, type: 3}
+  - {fileID: 21300000, guid: 275032014792c8a46b6f53837e39a252, type: 3}
+  - {fileID: 21300000, guid: f53d4f89f88b02542ab918bc5466b5ed, type: 3}

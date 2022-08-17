@@ -5,15 +5,20 @@ using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] public GameObject[] plantPlaceholders;
+    [SerializeField] public PlantPlaceholderScript[] plantPlaceholders;
     [SerializeField] public Plant[] plantTypes;
-    [SerializeField] public Planter[] planterTypes;
 
     public PauseMenu pauseMenu;
 
     private void Awake()
     {
-
+        // Randomize the assigned plants and plant stages to the pots (not randomizing the planters)
+        foreach (PlantPlaceholderScript plantPlaceholder in plantPlaceholders)
+        {
+            plantPlaceholder.assignedPlant = plantTypes[Random.Range(0, plantTypes.Length)];
+            plantPlaceholder.assignedPlantSprite = plantPlaceholder.assignedPlant.stages[Random.Range(0, 4)];
+            plantPlaceholder.GetComponentInChildren<SpriteRenderer>().sprite = plantPlaceholder.assignedPlantSprite;
+        }
     }
 
     void Start()
