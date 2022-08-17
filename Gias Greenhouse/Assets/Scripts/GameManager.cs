@@ -5,8 +5,7 @@ using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] public GameObject[] tallPlantPlaceholders;
-    [SerializeField] public GameObject[] shortPlantPlaceholders;
+    [SerializeField] public GameObject[] plantPlaceholders;
     [SerializeField] public Plant[] plantTypes;
     [SerializeField] public Planter[] planterTypes;
 
@@ -15,10 +14,6 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
 
-        // Start growing the plants?
-        foreach (GameObject plantPlaceholder in shortPlantPlaceholders){
-            
-        }
     }
 
     void Start()
