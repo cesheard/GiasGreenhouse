@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
-//using UnityEngine.InputSystem;
+using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
@@ -18,27 +18,27 @@ public class PauseMenu : MonoBehaviour
     public static bool canToggle = true;
     public GameObject pauseMenuParentObj;
     public GameObject pauseMenuUI;
-    public GameObject mainMenuUI;
+    //public GameObject mainMenuUI;
     //public GameObject usernameUI;
     public GameObject optionsMenuUI;
     public GameObject optionsGraphicsMenuUI;
     //public GameObject optionsControlsMenuUI;
     public GameObject optionsAudioMenuUI;
-    public AudioSource audioSource;
+    //public AudioSource audioSource;
     public AudioMixer audioMixer;
     public EventSystem eventSystem;
 
-    public Button resumeButton;
-    public Button graphicsButton;
-    public TMP_Dropdown resolutionDropdown;
-    Resolution[] resolutions;
+    //public Button resumeButton;
+    //public Button graphicsButton;
 
     public TMP_Dropdown fsDropdown;
+    public TMP_Dropdown resolutionDropdown;
+    Resolution[] resolutions;
     public TMP_Dropdown graphicDropdown;
 
     public Animator pauseScreenAnimator;
-    public Animator pauseBoardAnimator;
-    public Animator selectButton;
+    //public Animator pauseBoardAnimator;
+    //public Animator selectButton;
 
     private bool firstToggle = true;
 
@@ -113,6 +113,7 @@ public class PauseMenu : MonoBehaviour
         }*/
         
     } // End of Update()
+
     public void PauseToggle()
     {
         if (canToggle)
@@ -126,7 +127,7 @@ public class PauseMenu : MonoBehaviour
                 Pause();
                 //eventSystem.GetComponent<ControllerDetector>().HighlightButton(resumeButton);
             }
-            audioSource.Play();
+            //audioSource.Play();
         }
     }
 
@@ -151,7 +152,7 @@ public class PauseMenu : MonoBehaviour
         //Time.timeScale = 0;
         gameIsPaused = true;
         pauseScreenAnimator.SetBool("isPaused", true);
-        pauseBoardAnimator.SetBool("isPaused", true);
+        //pauseBoardAnimator.SetBool("isPaused", true);
         canToggle = false;
         StartCoroutine("SwitchBack");
     } // End of Pause()
@@ -161,7 +162,7 @@ public class PauseMenu : MonoBehaviour
         //Time.timeScale = 1;
         gameIsPaused = false;
         pauseScreenAnimator.SetBool("isPaused", false);
-        pauseBoardAnimator.SetBool("isPaused", false);
+        //pauseBoardAnimator.SetBool("isPaused", false);
         canToggle = false;
         StartCoroutine("SwitchBack");
         eventSystem.SetSelectedGameObject(null);
@@ -208,7 +209,7 @@ public class PauseMenu : MonoBehaviour
             LoadGraphics();
             firstToggle = false;
         }
-        audioSource.Play();
+        //audioSource.Play();
 
     } // End of LoadOptions()
 
@@ -228,7 +229,7 @@ public class PauseMenu : MonoBehaviour
         optionsGraphicsMenuUI.SetActive(true);
         //optionsControlsMenuUI.SetActive(false);
         optionsAudioMenuUI.SetActive(false);
-        audioSource.Play();
+        //audioSource.Play();
         //eventSystem.GetComponent<ControllerDetector>().HighlightButton(graphicsButton);
     } // End of Graphics()
 
@@ -245,7 +246,7 @@ public class PauseMenu : MonoBehaviour
         optionsGraphicsMenuUI.SetActive(false);
         //optionsControlsMenuUI.SetActive(false);
         optionsAudioMenuUI.SetActive(true);
-        audioSource.Play();
+        //audioSource.Play();
     } // End of Audio()
 
     public void QuitGame()

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
-public class SettingsMenu : MonoBehaviour
+public class TitleSettingsMenu : MonoBehaviour
 {
     //public MenuCamera menuCam;
     public GameObject titleMenuUI;
@@ -102,6 +102,11 @@ public class SettingsMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    }
+
+    public void PlayGame()
+    {
+        SceneManager.LoadScene(1);
     }
 
     public void LoadOptions()
