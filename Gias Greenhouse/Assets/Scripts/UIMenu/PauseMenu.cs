@@ -26,7 +26,7 @@ public class PauseMenu : MonoBehaviour
     public TMP_Dropdown graphicDropdown;
 
     public Animator pauseMenuAnimator;
-    private bool firstToggle = true;
+    private bool firstPauseToggle = true;
 
     // Start is called before the first frame update
     void Start()
@@ -111,19 +111,19 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Loading the options...");
         
-        pauseMenuParentObj.SetActive(false);
+        pauseMenuUI.SetActive(false);
         optionsMenuUI.SetActive(true);
-        if (firstToggle)
+        if (firstPauseToggle)
         {
-            LoadGraphics();
-            firstToggle = false;
+            LoadAudio();
+            firstPauseToggle = false;
         }
 
     } // End of LoadOptions()
 
     public void OptionsBack()
     {
-        pauseMenuParentObj.SetActive(true);
+        pauseMenuUI.SetActive(true);
         optionsMenuUI.SetActive(false);
 
     } // End of OptionsBack()
