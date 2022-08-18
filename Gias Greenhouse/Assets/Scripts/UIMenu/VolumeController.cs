@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -13,21 +11,25 @@ public class VolumeController : MonoBehaviour
     private void Awake()
     {
         slider.onValueChanged.AddListener(HandleSliderValueChanged);
-    }
+
+    } // End of Awake()
 
     private void OnDisable()
     {
         PlayerPrefs.SetFloat(volumeParameter, slider.value);
-    }
+
+    } // End of onDisable()
 
     void Start()
     {
         slider.value = PlayerPrefs.GetFloat(volumeParameter, slider.value);
         HandleSliderValueChanged(slider.value);
-    }
+
+    } // End of Start()
 
     public void HandleSliderValueChanged(float value)
     {
         mixer.audioMixer.SetFloat(volumeParameter, Mathf.Log10(value) * 20);
-    }
+
+    } // End of HandleSliderValueChanged(float value)
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlantPlaceholderScript : MonoBehaviour
@@ -9,20 +7,9 @@ public class PlantPlaceholderScript : MonoBehaviour
     public Sprite assignedPlantSprite;
     public DropSlot labelSlot;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    // Checks to see if the assigned label is correct, returns bool; GameManager references the function
     public bool CheckLabels()
     {
         return (labelSlot.labelName.Equals(assignedPlant.name));
-    }
+    } // End of CheckLabels()
 }

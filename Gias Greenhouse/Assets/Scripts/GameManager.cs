@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
@@ -22,19 +20,20 @@ public class GameManager : MonoBehaviour
             plantPlaceholder.assignedPlantSprite = plantPlaceholder.assignedPlant.stages[Random.Range(0, 4)];
             plantPlaceholder.GetComponentInChildren<SpriteRenderer>().sprite = plantPlaceholder.assignedPlantSprite;
         }
-    }
+
+    } // End of Awake()
 
     void Start()
     {
         pauseMenu = FindObjectOfType<PauseMenu>();
-    }
+
+    } // End of Start()
 
     public void OnPauseMenu(InputValue value)
     {
-
-        Debug.Log("Player is tring to pause game");
         pauseMenu.PauseToggle();
-    }
+
+    } // End of OnPauseMenu(InputValue value)
 
     public void CheckLabels()
     {
@@ -48,5 +47,6 @@ public class GameManager : MonoBehaviour
             }
         }
         scoreText.text = "You correctly labeled " + correctLabelCount + " out of " + plantPlaceholders.Length;
-    }
+
+    } // End of CheckLabels()
 }

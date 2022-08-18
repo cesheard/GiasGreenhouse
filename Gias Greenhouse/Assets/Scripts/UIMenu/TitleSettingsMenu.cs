@@ -1,10 +1,6 @@
-//using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.Events;
-//using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
-//using UnityEngine.UI;
 using TMPro;
 
 public class TitleSettingsMenu : MonoBehaviour
@@ -23,11 +19,13 @@ public class TitleSettingsMenu : MonoBehaviour
 
     void Start()
     {
+        // Make sure other menus are off
         hTPMenuUI.SetActive(false);
         settingsMenuUI.SetActive(false);
         optionsGraphicsMenuUI.SetActive(false);
         optionsAudioMenuUI.SetActive(false);
 
+        // Graphics Settings Checks/Setup
         resolutions = Screen.resolutions;
         List<string> options = new List<string>();      // The list of resolutions that is shown to the player
         int currentResolutionIndex = 0;
@@ -60,16 +58,11 @@ public class TitleSettingsMenu : MonoBehaviour
         int selectedQualityPref = PlayerPrefs.GetInt("SelectedQuality", 3);
         qualityDropdown.value = selectedQualityPref;
         SetQuality(selectedQualityPref);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
+    } // End of Start()
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1);      // Scene 1 is greenhouse scene in build settings
 
     } // End of PlayGame()
 
@@ -78,13 +71,14 @@ public class TitleSettingsMenu : MonoBehaviour
         titleMenuUI.SetActive(false);
         settingsMenuUI.SetActive(false);
         hTPMenuUI.SetActive(true);
-    }
+
+    } // End of LoadHTP()
 
     public void LoadOptions()
     {
-        Debug.Log("Loading the options...");
         titleMenuUI.SetActive(false);
         settingsMenuUI.SetActive(true);
+        // Show Audio fist if it's the first load
         if (firstToggle)
         {
             LoadAudio();
@@ -106,21 +100,14 @@ public class TitleSettingsMenu : MonoBehaviour
         optionsGraphicsMenuUI.SetActive(true);
         optionsAudioMenuUI.SetActive(false);
 
-    } // End of Graphics()
-
-    public void LoadControls()
-    {
-        optionsGraphicsMenuUI.SetActive(false);
-        optionsAudioMenuUI.SetActive(false);
-
-    } // End of Controls()
+    } // End of LoadGraphics()
 
     public void LoadAudio()
     {
         optionsGraphicsMenuUI.SetActive(false);
         optionsAudioMenuUI.SetActive(true);
 
-    } // End of Audio()
+    } // End of LoadAudio()
 
     public void QuitGame()
     {
@@ -133,14 +120,16 @@ public class TitleSettingsMenu : MonoBehaviour
     {
         QualitySettings.SetQualityLevel(qualityIndex);
         PlayerPrefs.SetInt("SelectedQuality", qualityIndex);
-    }
+
+    } // End of SetQuality(int qualityIndex)
 
     public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
         PlayerPrefs.SetInt("SelectedResolution", resolutionIndex);
-    }
+
+    } // End of SetResolution(int resolutionIndex)
 
     public void SetFullscreen()
     {
@@ -162,15 +151,13 @@ public class TitleSettingsMenu : MonoBehaviour
         {
             Screen.fullScreenMode = FullScreenMode.MaximizedWindow;
             Debug.Log("Maximized Window");
-            //Screen.fullScreen = false;
             PlayerPrefs.SetInt("SelectedFullscreenMode", 2);
         }
         else if (fsDropdown.options[fsDropdown.value].text == "Windowed")
         {
             Screen.fullScreenMode = FullScreenMode.Windowed;
             Debug.Log("Windowed");
-            //Screen.fullScreen = false;
             PlayerPrefs.SetInt("SelectedFullscreenMode", 3);
         }
-    }
+    } // End of SetFullscreen()
 }

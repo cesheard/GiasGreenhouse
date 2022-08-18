@@ -1,9 +1,6 @@
-//using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
 
@@ -20,8 +17,6 @@ public class PauseMenu : MonoBehaviour
     public GameObject optionsMenuUI;
     public GameObject optionsGraphicsMenuUI;
     public GameObject optionsAudioMenuUI;
-    //public AudioMixer audioMixer;
-    public EventSystem eventSystem;
 
     public TMP_Dropdown fsDropdown;
     public TMP_Dropdown resolutionDropdown;
@@ -39,8 +34,8 @@ public class PauseMenu : MonoBehaviour
         optionsMenuUI.SetActive(false);
         optionsGraphicsMenuUI.SetActive(false);
         optionsAudioMenuUI.SetActive(false);
-        //eventSystem = GameObject.FindObjectOfType<EventSystem>();
 
+        // Graphics Settings Checks/Setup
         resolutions = Screen.resolutions;
         List<string> options = new List<string>();
         int currentResolutionIndex = 0;
@@ -49,7 +44,7 @@ public class PauseMenu : MonoBehaviour
             string option = resolutions[i].width + " x " + resolutions[i].height + " @" + resolutions[i].refreshRate + "hz";
             options.Add(option);
 
-            if (PlayerPrefs.GetInt("SelectedResolution", -1) == -1)       // First time playing (or never changed resolution??)
+            if (PlayerPrefs.GetInt("SelectedResolution", -1) == -1)       // First time playing (or never changed resolution)
             {
                 if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
                 {
@@ -91,14 +86,15 @@ public class PauseMenu : MonoBehaviour
 
     public void GoTitleMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0);      // Scene 0 is title menu in build settings
 
     } // End of GoTitleMenu()
 
     public void ResetScene()
     {
-        SceneManager.LoadScene(1);
-    }
+        SceneManager.LoadScene(1);      // Scene 1 is greenhouse scene in build settings
+
+    } // End of ResetScene()
 
     public void ToggleIDBook()
     {
@@ -112,10 +108,12 @@ public class PauseMenu : MonoBehaviour
             iDBookMenuUI.SetActive(true);
             iDBookIsOpen = true;
         }
-    }
+
+    } // End of ToggleIDBook()
 
     public void Pause()
     {
+        // Make sure ID book is closed if player tries to pause
         if (iDBookIsOpen)
         {
             ToggleIDBook();
@@ -123,6 +121,7 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = true;
         pauseMenuBackground.SetActive(true);
         pauseMenuAnimator.SetBool("isPaused", true);
+
     } // End of Pause()
 
     public void Resume()
@@ -130,16 +129,14 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = false;
         pauseMenuBackground.SetActive(false);
         pauseMenuAnimator.SetBool("isPaused", false);
-        //eventSystem.SetSelectedGameObject(null);
 
     } // End of Resume()
 
     public void LoadOptions()
     {
-        Debug.Log("Loading the options...");
-        
         pauseMenuUI.SetActive(false);
         optionsMenuUI.SetActive(true);
+        // Show Audio fist if it's the first load
         if (firstPauseToggle)
         {
             LoadAudio();
@@ -161,14 +158,14 @@ public class PauseMenu : MonoBehaviour
         optionsGraphicsMenuUI.SetActive(true);
         optionsAudioMenuUI.SetActive(false);
 
-    } // End of Graphics()
+    } // End of LoadGraphics()
 
     public void LoadAudio()
     {
         optionsGraphicsMenuUI.SetActive(false);
         optionsAudioMenuUI.SetActive(true);
 
-    } // End of Audio()
+    } // End of LoadAudio()
 
     public void QuitGame()
     {
@@ -181,14 +178,14 @@ public class PauseMenu : MonoBehaviour
     {
         QualitySettings.SetQualityLevel(qualityIndex);
         PlayerPrefs.SetInt("SelectedQuality", qualityIndex);
-    }
+    } // End of SetQuality(int qualityIndex)
 
     public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
         PlayerPrefs.SetInt("SelectedResolution", resolutionIndex);
-    }
+    } // End of SetResolution(int resolutionIndex)
 
     public void SetFullscreen()
     {
@@ -210,17 +207,15 @@ public class PauseMenu : MonoBehaviour
         {
             Screen.fullScreenMode = FullScreenMode.MaximizedWindow;
             Debug.Log("Maximized Window");
-            //Screen.fullScreen = false;
             PlayerPrefs.SetInt("SelectedFullscreenMode", 2);
         }
         else if (fsDropdown.options[fsDropdown.value].text == "Windowed")
         {
             Screen.fullScreenMode = FullScreenMode.Windowed;
             Debug.Log("Windowed");
-            //Screen.fullScreen = false;
             PlayerPrefs.SetInt("SelectedFullscreenMode", 3);
         }
-    }
+    } // End of SetFullscreen()
 
 }
 
