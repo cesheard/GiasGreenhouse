@@ -10,6 +10,8 @@ using UnityEngine.EventSystems;
 public class PauseMenu : MonoBehaviour
 {
     // -- Declared Variables -- //
+    public GameObject iDBookMenuUI;
+    public static bool iDBookIsOpen;
     public static bool gameIsPaused = false;
     public GameObject pauseMenuParentObj;
     public GameObject pauseMenuBackground;
@@ -91,8 +93,26 @@ public class PauseMenu : MonoBehaviour
 
     } // End of GoTitleMenu()
 
+    public void ToggleIDBook()
+    {
+        if (iDBookIsOpen)
+        {
+            iDBookMenuUI.SetActive(false);
+            iDBookIsOpen = false;
+        }
+        else
+        {
+            iDBookMenuUI.SetActive(true);
+            iDBookIsOpen = true;
+        }
+    }
+
     public void Pause()
     {
+        if (iDBookIsOpen)
+        {
+            ToggleIDBook();
+        }
         gameIsPaused = true;
         pauseMenuBackground.SetActive(true);
         pauseMenuAnimator.SetBool("isPaused", true);
