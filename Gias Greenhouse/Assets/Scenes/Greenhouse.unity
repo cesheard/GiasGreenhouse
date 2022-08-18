@@ -3968,8 +3968,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
+      - m_Target: {fileID: 1454091442}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: SetResolution
         m_Mode: 0
         m_Arguments:
@@ -5028,8 +5028,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
+      - m_Target: {fileID: 1454091442}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: SetFullscreen
         m_Mode: 1
         m_Arguments:
@@ -16138,7 +16138,6 @@ MonoBehaviour:
   optionsMenuUI: {fileID: 195177022}
   optionsGraphicsMenuUI: {fileID: 1158261753}
   optionsAudioMenuUI: {fileID: 577187324}
-  audioMixer: {fileID: 24100000, guid: 5fdddf3943f2d724f829c1d4ab334bf4, type: 2}
   eventSystem: {fileID: 1796189968}
   fsDropdown: {fileID: 363019172}
   resolutionDropdown: {fileID: 267642930}
@@ -22179,8 +22178,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
+      - m_Target: {fileID: 1454091442}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: SetQuality
         m_Mode: 0
         m_Arguments:

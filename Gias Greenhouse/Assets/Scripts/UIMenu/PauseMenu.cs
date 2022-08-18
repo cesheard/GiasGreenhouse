@@ -1,7 +1,7 @@
-using System.Collections;
+//using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
+//using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
@@ -20,7 +20,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject optionsMenuUI;
     public GameObject optionsGraphicsMenuUI;
     public GameObject optionsAudioMenuUI;
-    public AudioMixer audioMixer;
+    //public AudioMixer audioMixer;
     public EventSystem eventSystem;
 
     public TMP_Dropdown fsDropdown;
@@ -39,7 +39,7 @@ public class PauseMenu : MonoBehaviour
         optionsMenuUI.SetActive(false);
         optionsGraphicsMenuUI.SetActive(false);
         optionsAudioMenuUI.SetActive(false);
-        eventSystem = GameObject.FindObjectOfType<EventSystem>();
+        //eventSystem = GameObject.FindObjectOfType<EventSystem>();
 
         resolutions = Screen.resolutions;
         List<string> options = new List<string>();
@@ -62,7 +62,7 @@ public class PauseMenu : MonoBehaviour
             }
         }
         resolutionDropdown.AddOptions(options);
-        int selectedResolution = PlayerPrefs.GetInt("SelectedResolution", 0);
+        int selectedResolution = PlayerPrefs.GetInt("SelectedResolution", -1);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
 
@@ -70,7 +70,7 @@ public class PauseMenu : MonoBehaviour
         fsDropdown.value = selectedFullscreenMode;  //fullscreenDropdown value - 0 (Fullscreen Window), 1 (Exclusive Fullscreen), 2 (Maximized Window [not supported on Windows]), 3 (Windowed)
         SetFullscreen();
 
-        int selectedQualityPref = PlayerPrefs.GetInt("SelectedQuality", 0);
+        int selectedQualityPref = PlayerPrefs.GetInt("SelectedQuality", 3);
         graphicDropdown.value = selectedQualityPref;
         SetQuality(selectedQualityPref);
 
