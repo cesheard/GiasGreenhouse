@@ -10,6 +10,7 @@ using UnityEngine.EventSystems;
 public class PauseMenu : MonoBehaviour
 {
     // -- Declared Variables -- //
+    public GameObject scoreMenuUI;
     public GameObject iDBookMenuUI;
     public static bool iDBookIsOpen;
     public static bool gameIsPaused = false;
@@ -33,6 +34,7 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scoreMenuUI.SetActive(false);
         gameIsPaused = false;
         optionsMenuUI.SetActive(false);
         optionsGraphicsMenuUI.SetActive(false);
@@ -92,6 +94,11 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(0);
 
     } // End of GoTitleMenu()
+
+    public void ResetScene()
+    {
+        SceneManager.LoadScene(1);
+    }
 
     public void ToggleIDBook()
     {

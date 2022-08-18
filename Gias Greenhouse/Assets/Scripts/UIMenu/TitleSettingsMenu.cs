@@ -10,6 +10,7 @@ using TMPro;
 public class TitleSettingsMenu : MonoBehaviour
 {
     public GameObject titleMenuUI;
+    public GameObject hTPMenuUI;
     public GameObject settingsMenuUI;
     public GameObject optionsAudioMenuUI;
     public GameObject optionsGraphicsMenuUI;
@@ -22,6 +23,7 @@ public class TitleSettingsMenu : MonoBehaviour
 
     void Start()
     {
+        hTPMenuUI.SetActive(false);
         settingsMenuUI.SetActive(false);
         optionsGraphicsMenuUI.SetActive(false);
         optionsAudioMenuUI.SetActive(false);
@@ -71,6 +73,13 @@ public class TitleSettingsMenu : MonoBehaviour
 
     } // End of PlayGame()
 
+    public void LoadHTP()
+    {
+        titleMenuUI.SetActive(false);
+        settingsMenuUI.SetActive(false);
+        hTPMenuUI.SetActive(true);
+    }
+
     public void LoadOptions()
     {
         Debug.Log("Loading the options...");
@@ -88,6 +97,7 @@ public class TitleSettingsMenu : MonoBehaviour
     {
         titleMenuUI.SetActive(true);
         settingsMenuUI.SetActive(false);
+        hTPMenuUI.SetActive(false);
 
     } // End of OptionsBack()
 

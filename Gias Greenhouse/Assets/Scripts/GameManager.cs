@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Plant[] plantTypes;
 
     public PauseMenu pauseMenu;
+    public TMP_Text scoreText;
+    public GameObject scoreMenuUI;
 
     private void Awake()
     {
@@ -31,5 +34,19 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("Player is tring to pause game");
         pauseMenu.PauseToggle();
+    }
+
+    public void CheckLabels()
+    {
+        scoreMenuUI.SetActive(true);
+        int correctLabelCount = 0;
+        foreach (PlantPlaceholderScript plantPlaceholder in plantPlaceholders)
+        {
+            if (plantPlaceholder.CheckLabels())
+            {
+                correctLabelCount++;
+            }
+        }
+        scoreText.text = "You correctly labeled " + correctLabelCount + " out of " + plantPlaceholders.Length;
     }
 }
