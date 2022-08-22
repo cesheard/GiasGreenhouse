@@ -90,30 +90,6 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-
-
-            /*if (plantPlaceholders[0].stageDone && plantPlaceholders[0].assignedPlantCurrentStage < 3)
-            {
-                // Add needs water indication
-
-                // When watered, start next grow stage
-                plantPlaceholders[0].stageDone = false;
-                plantPlaceholders[0].assignedPlantCurrentStage++;
-                plantPlaceholders[0].assignedPlantSprite = plantPlaceholders[0].assignedPlant.stages[plantPlaceholders[0].assignedPlantCurrentStage];
-                plantPlaceholders[0].GetComponentInChildren<SpriteRenderer>().sprite = plantPlaceholders[0].assignedPlantSprite;
-
-                Debug.Log(plantPlaceholders[0].assignedPlantCurrentStage + " " + plantPlaceholders[0].assignedPlantSprite.name);
-                StartCoroutine(plantPlaceholders[0].GrowTime(plantPlaceholders[0].assignedPlant.growTime));
-            }
-            if (plantPlaceholders[0].stageDone && plantPlaceholders[0].assignedPlantCurrentStage == 3)
-            {
-                // Add ready to pick indication
-
-                // When re-planted, start first grow stage
-                //plantPlaceholder.assignedPlantCurrentStage = 0;
-                Debug.Log(plantPlaceholders[0].assignedPlantCurrentStage + " " + plantPlaceholders[0].assignedPlantSprite.name);
-            }*/
-
             yield return new WaitForSeconds(.1f);
         }
     }
