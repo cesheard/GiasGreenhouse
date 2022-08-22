@@ -17,3 +17,4 @@ Clay Pots: https://cdn.pixabay.com/photo/2018/08/11/19/31/pots-3599298_640.png
 Tomato Reference: https://i.pinimg.com/originals/d0/93/b5/d093b5ee49ea424f53b2a643e7240473.jpg
 Carrot Reference: https://media.istockphoto.com/vectors/stages-of-growth-of-carrots-vector-id989888626?s=612x612
 Drag and Drop: https://www.youtube.com/watch?v=BGr-7GZJNXg
+Watercan: https://openclipart.org/image/2400px/svg_to_png/203249/watering-can.png
