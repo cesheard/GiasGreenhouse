@@ -19,3 +19,6 @@ Carrot Reference: https://media.istockphoto.com/vectors/stages-of-growth-of-carr
 Drag and Drop: https://www.youtube.com/watch?v=BGr-7GZJNXg
 Watercan: https://openclipart.org/image/2400px/svg_to_png/203249/watering-can.png
 Garden Glove Cusor Icon: https://freesvg.org/img/guanti--e-pinze.png
+Potato Icon: https://openclipart.org/image/2400px/svg_to_png/209652/food-potato.png
+Carrot Icon: https://freesvg.org/img/food-carrot.png
+Tomato Icon: https://freesvg.org/img/1546230197.png
