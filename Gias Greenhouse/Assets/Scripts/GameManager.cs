@@ -12,6 +12,14 @@ public class GameManager : MonoBehaviour
     public TMP_Text scoreText;
     public GameObject scoreMenuUI;
 
+    public int numOfTomatoes;
+    public TMP_Text textOfTomatoes;
+    public int numOfPotatoes;
+    public TMP_Text textOfPotatoes;
+    public int numOfCarrots;
+    public TMP_Text textOfCarrots;
+
+
     private void Awake()
     {
         // Randomize the assigned plants and plant stages to the pots (not randomizing the planters)
@@ -103,6 +111,21 @@ public class GameManager : MonoBehaviour
                     // When re-planted, start first grow stage
                     if (!plantPlaceholder.readyToPick)
                     {
+                        if (plantPlaceholder.assignedPlant == plantTypes[0])
+                        {
+                            numOfTomatoes++;
+                            textOfTomatoes.text = "" + numOfTomatoes;
+                        }
+                        else if (plantPlaceholder.assignedPlant == plantTypes[1])
+                        {
+                            numOfPotatoes++;
+                            textOfPotatoes.text = "" + numOfPotatoes;
+                        }
+                        else if (plantPlaceholder.assignedPlant == plantTypes[2])
+                        {
+                            numOfCarrots++;
+                            textOfCarrots.text = "" + numOfCarrots;
+                        }
                         plantPlaceholder.stageDone = false;
                         plantPlaceholder.assignedPlantHighlight.enabled = false;
                         plantPlaceholder.assignedPlantCurrentStage = 0;
