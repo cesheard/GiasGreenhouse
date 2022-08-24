@@ -93,16 +93,24 @@ public class GameManager : MonoBehaviour
                 }
                 if (plantPlaceholder.stageDone && plantPlaceholder.assignedPlantCurrentStage == 3)
                 {
-                    // Add ready to pick indication
-                    plantPlaceholder.assignedPlantHighlight.enabled = true;
-                    plantPlaceholder.assignedPlantHighlight.sprite = plantPlaceholder.assignedPlant.purpleHighlight;
+                    if (plantPlaceholder.readyToPick)
+                    {
+                        // Add ready to pick indication
+                        plantPlaceholder.assignedPlantHighlight.enabled = true;
+                        plantPlaceholder.assignedPlantHighlight.sprite = plantPlaceholder.assignedPlant.purpleHighlight;
+                    }
 
                     // When re-planted, start first grow stage
-                    /*if ()
+                    if (!plantPlaceholder.readyToPick)
                     {
-                        //plantPlaceholder.assignedPlantHighlight.enabled = false;
-                        //plantPlaceholder.assignedPlantCurrentStage = 0;
-                    }*/
+                        plantPlaceholder.stageDone = false;
+                        plantPlaceholder.assignedPlantHighlight.enabled = false;
+                        plantPlaceholder.assignedPlantCurrentStage = 0;
+                        plantPlaceholder.assignedPlantSprite = plantPlaceholder.assignedPlant.stages[plantPlaceholder.assignedPlantCurrentStage];
+                        plantPlaceholder.GetComponentInChildren<SpriteRenderer>().sprite = plantPlaceholder.assignedPlantSprite;
+
+                        StartCoroutine(plantPlaceholder.GrowTime(plantPlaceholder.assignedPlant.growTime));
+                    }
                 }
             }
 
