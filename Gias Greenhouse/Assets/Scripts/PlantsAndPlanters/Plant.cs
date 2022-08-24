@@ -5,5 +5,7 @@ public class Plant : ScriptableObject
 {
     public string plantName = "New Plant";
     public Sprite[] stages = new Sprite[4];
+    public float growTime = 0f;
+    public Sprite purpleHighlight;
 
 }

@@ -4205,6 +4205,7 @@ GameObject:
   - component: {fileID: 307326758}
   - component: {fileID: 307326760}
   - component: {fileID: 307326759}
+  - component: {fileID: 307326761}
   m_Layer: 5
   m_Name: PlantSlot
   m_TagString: Untagged
@@ -4245,7 +4246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2901961}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4267,6 +4268,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 307326757}
   m_CullTransparentMesh: 1
+--- !u!114 &307326761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307326757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f6f9979b369a443ae4cb13b25ccb7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  labelName: 
 --- !u!1 &307450945
 GameObject:
   m_ObjectHideFlags: 0
@@ -5891,7 +5905,11 @@ MonoBehaviour:
   plantObject: {fileID: 0}
   assignedPlant: {fileID: 0}
   assignedPlantSprite: {fileID: 0}
+  assignedPlantHighlight: {fileID: 0}
   labelSlot: {fileID: 1429295403}
+  assignedPlantCurrentStage: -1
+  stageDone: 0
+  needsWater: 1
 --- !u!1 &417909599
 GameObject:
   m_ObjectHideFlags: 0
@@ -8812,7 +8830,11 @@ MonoBehaviour:
   plantObject: {fileID: 0}
   assignedPlant: {fileID: 0}
   assignedPlantSprite: {fileID: 0}
+  assignedPlantHighlight: {fileID: 0}
   labelSlot: {fileID: 76738658}
+  assignedPlantCurrentStage: -1
+  stageDone: 0
+  needsWater: 1
 --- !u!1 &761265167
 GameObject:
   m_ObjectHideFlags: 0
@@ -9418,7 +9440,11 @@ MonoBehaviour:
   plantObject: {fileID: 2014188230}
   assignedPlant: {fileID: 0}
   assignedPlantSprite: {fileID: 0}
+  assignedPlantHighlight: {fileID: 0}
   labelSlot: {fileID: 1567483162}
+  assignedPlantCurrentStage: -1
+  stageDone: 0
+  needsWater: 1
 --- !u!1 &818796911
 GameObject:
   m_ObjectHideFlags: 0
@@ -11109,7 +11135,11 @@ MonoBehaviour:
   plantObject: {fileID: 0}
   assignedPlant: {fileID: 0}
   assignedPlantSprite: {fileID: 0}
+  assignedPlantHighlight: {fileID: 0}
   labelSlot: {fileID: 555617473}
+  assignedPlantCurrentStage: -1
+  stageDone: 0
+  needsWater: 1
 --- !u!1 &1011880423
 GameObject:
   m_ObjectHideFlags: 0
@@ -12043,7 +12073,11 @@ MonoBehaviour:
   plantObject: {fileID: 0}
   assignedPlant: {fileID: 0}
   assignedPlantSprite: {fileID: 0}
+  assignedPlantHighlight: {fileID: 0}
   labelSlot: {fileID: 123792700}
+  assignedPlantCurrentStage: -1
+  stageDone: 0
+  needsWater: 1
 --- !u!1 &1078530314
 GameObject:
   m_ObjectHideFlags: 0
@@ -16764,7 +16798,11 @@ MonoBehaviour:
   plantObject: {fileID: 0}
   assignedPlant: {fileID: 0}
   assignedPlantSprite: {fileID: 0}
+  assignedPlantHighlight: {fileID: 0}
   labelSlot: {fileID: 385121902}
+  assignedPlantCurrentStage: -1
+  stageDone: 0
+  needsWater: 1
 --- !u!1 &1545487140
 GameObject:
   m_ObjectHideFlags: 0
@@ -17694,7 +17732,11 @@ MonoBehaviour:
   plantObject: {fileID: 0}
   assignedPlant: {fileID: 0}
   assignedPlantSprite: {fileID: 0}
+  assignedPlantHighlight: {fileID: 0}
   labelSlot: {fileID: 475786172}
+  assignedPlantCurrentStage: -1
+  stageDone: 0
+  needsWater: 1
 --- !u!1 &1635453288
 GameObject:
   m_ObjectHideFlags: 0
@@ -19347,7 +19389,11 @@ MonoBehaviour:
   plantObject: {fileID: 0}
   assignedPlant: {fileID: 0}
   assignedPlantSprite: {fileID: 0}
+  assignedPlantHighlight: {fileID: 0}
   labelSlot: {fileID: 77321436}
+  assignedPlantCurrentStage: -1
+  stageDone: 0
+  needsWater: 1
 --- !u!1 &1796189965
 GameObject:
   m_ObjectHideFlags: 0
@@ -21701,6 +21747,7 @@ GameObject:
   - component: {fileID: 2070395674}
   - component: {fileID: 2070395676}
   - component: {fileID: 2070395675}
+  - component: {fileID: 2070395677}
   m_Layer: 5
   m_Name: WateringCanIcon
   m_TagString: Untagged
@@ -21766,6 +21813,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2070395673}
   m_CullTransparentMesh: 1
+--- !u!114 &2070395677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070395673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf82c4ca7a12ac41ad9a933ddc31517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  greenhouseCanvas: {fileID: 1454091440}
 --- !u!1 &2075772662
 GameObject:
   m_ObjectHideFlags: 0
@@ -22130,7 +22190,11 @@ MonoBehaviour:
   plantObject: {fileID: 0}
   assignedPlant: {fileID: 0}
   assignedPlantSprite: {fileID: 0}
+  assignedPlantHighlight: {fileID: 0}
   labelSlot: {fileID: 824236428}
+  assignedPlantCurrentStage: -1
+  stageDone: 0
+  needsWater: 1
 --- !u!1 &2098041049
 GameObject:
   m_ObjectHideFlags: 0
