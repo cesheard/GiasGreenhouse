@@ -26,58 +26,29 @@ public class ClickCursor : MonoBehaviour, IPointerClickHandler, IPointerMoveHand
         startPosition = new Vector2(this.rectTransform.position.x, this.rectTransform.position.y);
     }
 
-    void Update()
-    {
-        /*if (attachedToCursor)
-        {
-
-            this.rectTransform.position = new Vector3(cursorPos.x, cursorPos.y, 0);
-            //canvasGroup.blocksRaycasts = false;
-        }*/
-        /*else
-        {
-
-            canvasGroup.blocksRaycasts = true;
-        }*/
-    }
-
-    /*public void OnClick()
-    {
-        // attach the item to cursor
-        attachedToCursor = true;
-    }
-    public void OnRightClick()
-    {
-        // detatch the item from cursor
-        attachedToCursor = false;
-    }*/
-
     public void OnPointerClick(PointerEventData pointerEventData)
     {
-        //Output to console the clicked GameObject's name and the following message. You can replace this with your own actions for when clicking the GameObject.
-        //Debug.Log(name + " Game Object Clicked!");
-
         if (pointerEventData.button == PointerEventData.InputButton.Left)
         {
             // attach the item to cursor
             attachedToCursor = true;
-            //canvasGroup.interactable = false;
+            //canvasGroup.blocksRaycasts = false;
         }
         if (pointerEventData.button == PointerEventData.InputButton.Right)
         {
             // detatch the item from cursor
             attachedToCursor = false;
             this.rectTransform.position = new Vector3(startPosition.x, startPosition.y, 0);
-            //canvasGroup.interactable = true;
+            //canvasGroup.blocksRaycasts = true;
         }
     }
 
     public void OnPointerMove(PointerEventData eventData)
     {
-        //cursorPos = eventData.position;
         if (attachedToCursor)
         {
             rectTransform.anchoredPosition += (eventData.delta / greenhouseCanvas.scaleFactor);
+            //canvasGroup.blocksRaycasts = false;
         }
     }
 }

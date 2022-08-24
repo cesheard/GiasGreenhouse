@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class PlantSlot : MonoBehaviour, IPointerClickHandler
+public class PlantSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
 {
     [SerializeField] public PlantPlaceholderScript plantPlaceholder;
     [SerializeField] public ClickCursor wateringCan;
 
     public void OnPointerClick(PointerEventData pointerEventData)
     {
-        Debug.Log("Why?");
         if (pointerEventData.button == PointerEventData.InputButton.Left && plantPlaceholder.needsWater && wateringCan.attachedToCursor)
         {
             // Water the specific plant
@@ -20,5 +19,10 @@ public class PlantSlot : MonoBehaviour, IPointerClickHandler
         {
             Debug.Log("Does not need water yet!");
         }
+    }
+
+    public void OnPointerEnter(PointerEventData pointerEventData)
+    {
+
     }
 }
