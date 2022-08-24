@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
             plantPlaceholder.assignedPlantSprite = plantPlaceholder.assignedPlant.stages[plantPlaceholder.assignedPlantCurrentStage];
             plantPlaceholder.GetComponentInChildren<SpriteRenderer>().sprite = plantPlaceholder.assignedPlantSprite;
 
-            Debug.Log(plantPlaceholders[0].assignedPlantCurrentStage + " " + plantPlaceholders[0].assignedPlantSprite.name);
+            //Debug.Log(plantPlaceholders[0].assignedPlantCurrentStage + " " + plantPlaceholders[0].assignedPlantSprite.name);
             StartCoroutine(plantPlaceholder.GrowTime(plantPlaceholder.assignedPlant.growTime));
         }
 
@@ -69,24 +69,33 @@ public class GameManager : MonoBehaviour
             // Check growth of each plant
             foreach (PlantPlaceholderScript plantPlaceholder in plantPlaceholders)
             {
-                if (plantPlaceholder.stageDone && plantPlaceholder.assignedPlantCurrentStage < 3)
+                if (plantPlaceholder.stageDone && plantPlaceholder.assignedPlantCurrentStage < 3 && plantPlaceholder.needsWater)
                 {
                     // Add needs water indication
 
                     // When watered, start next grow stage
-                    plantPlaceholder.stageDone = false;
-                    plantPlaceholder.assignedPlantCurrentStage++;
-                    plantPlaceholder.assignedPlantSprite = plantPlaceholder.assignedPlant.stages[plantPlaceholder.assignedPlantCurrentStage];
-                    plantPlaceholder.GetComponentInChildren<SpriteRenderer>().sprite = plantPlaceholder.assignedPlantSprite;
+                    if (!plantPlaceholder.needsWater)
+                    {
+                        plantPlaceholder.stageDone = false;
+                        plantPlaceholder.assignedPlantCurrentStage++;
+                        plantPlaceholder.assignedPlantSprite = plantPlaceholder.assignedPlant.stages[plantPlaceholder.assignedPlantCurrentStage];
+                        plantPlaceholder.GetComponentInChildren<SpriteRenderer>().sprite = plantPlaceholder.assignedPlantSprite;
 
-                    StartCoroutine(plantPlaceholder.GrowTime(plantPlaceholder.assignedPlant.growTime));
+                        StartCoroutine(plantPlaceholder.GrowTime(plantPlaceholder.assignedPlant.growTime));
+                    }
                 }
                 if (plantPlaceholder.stageDone && plantPlaceholder.assignedPlantCurrentStage == 3)
                 {
                     // Add ready to pick indication
+                    plantPlaceholder.assignedPlantHighlight.enabled = true;
+                    plantPlaceholder.assignedPlantHighlight.sprite = plantPlaceholder.assignedPlant.purpleHighlight;
 
                     // When re-planted, start first grow stage
-                    //plantPlaceholder.assignedPlantCurrentStage = 0;
+                    /*if ()
+                    {
+                        //plantPlaceholder.assignedPlantHighlight.enabled = false;
+                        //plantPlaceholder.assignedPlantCurrentStage = 0;
+                    }*/
                 }
             }
 
