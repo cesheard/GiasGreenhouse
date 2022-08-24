@@ -20,3 +20,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0fb8ddf4d473ba24bba93d53eef796c7, type: 3}
   growTime: 10
   purpleHighlight: {fileID: 21300000, guid: ef8bea523d900ed488f0399d969bcbeb, type: 3}
+  blueHighlights:
+  - {fileID: 21300000, guid: 1d19ddb222efaca46a0e73cecf1f050b, type: 3}
+  - {fileID: 21300000, guid: 06c2e9a414ec0b5469fa1854bc1be2f5, type: 3}
+  - {fileID: 21300000, guid: 7cbb86904bfa1b242872dce07f221a2d, type: 3}

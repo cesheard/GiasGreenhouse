@@ -18,8 +18,12 @@ public class GameManager : MonoBehaviour
         foreach (PlantPlaceholderScript plantPlaceholder in plantPlaceholders)
         {
             plantPlaceholder.assignedPlant = plantTypes[Random.Range(0, plantTypes.Length)];
-            plantPlaceholder.assignedPlantSprite = plantPlaceholder.assignedPlant.stages[Random.Range(0, 4)];
+            plantPlaceholder.assignedPlantCurrentStage = Random.Range(0, 4);
+            plantPlaceholder.assignedPlantSprite = plantPlaceholder.assignedPlant.stages[plantPlaceholder.assignedPlantCurrentStage];
             plantPlaceholder.GetComponentInChildren<SpriteRenderer>().sprite = plantPlaceholder.assignedPlantSprite;
+
+            //Debug.Log(plantPlaceholders[0].assignedPlantCurrentStage + " " + plantPlaceholders[0].assignedPlantSprite.name);
+            StartCoroutine(plantPlaceholder.GrowTime(plantPlaceholder.assignedPlant.growTime));
         }
 
     } // End of Awake()
@@ -29,6 +33,12 @@ public class GameManager : MonoBehaviour
         pauseMenu = FindObjectOfType<PauseMenu>();
 
     } // End of Start()
+
+    void Update()
+    {
+        StartCoroutine(DoCheck());
+
+    } // End of Update()
 
     public void OnPauseMenu(InputValue value)
     {
@@ -59,13 +69,20 @@ public class GameManager : MonoBehaviour
             // Check growth of each plant
             foreach (PlantPlaceholderScript plantPlaceholder in plantPlaceholders)
             {
-                if (plantPlaceholder.stageDone && plantPlaceholder.assignedPlantCurrentStage < 3 && plantPlaceholder.needsWater)
+                if (plantPlaceholder.stageDone && plantPlaceholder.assignedPlantCurrentStage < 3 /*&& plantPlaceholder.needsWater*/)
                 {
-                    // Add needs water indication
+                    if (plantPlaceholder.needsWater)
+                    {
+                        // Add needs water indication
+                        plantPlaceholder.assignedPlantHighlight.enabled = true;
+                        plantPlaceholder.assignedPlantHighlight.sprite = plantPlaceholder.assignedPlant.blueHighlights[plantPlaceholder.assignedPlantCurrentStage];
+                    }
 
                     // When watered, start next grow stage
                     if (!plantPlaceholder.needsWater)
                     {
+                        plantPlaceholder.assignedPlantHighlight.enabled = false;
+
                         plantPlaceholder.stageDone = false;
                         plantPlaceholder.assignedPlantCurrentStage++;
                         plantPlaceholder.assignedPlantSprite = plantPlaceholder.assignedPlant.stages[plantPlaceholder.assignedPlantCurrentStage];

@@ -12,7 +12,7 @@ public class PlantPlaceholderScript : MonoBehaviour
     public DropSlot labelSlot;
     public int assignedPlantCurrentStage = -1;
     public bool stageDone = false;
-    public bool needsWater = true;
+    public bool needsWater = false;
 
     // Checks to see if the assigned label is correct, returns bool; GameManager references the function
     public bool CheckLabels()
@@ -26,6 +26,10 @@ public class PlantPlaceholderScript : MonoBehaviour
         yield return new WaitForSeconds(growTime);
 
         stageDone = true;
+        if (assignedPlantCurrentStage < 3)
+        {
+            needsWater = true;
+        }
     } // End of GrowTime(float growTime)
 
     /*public void OnPointerClick(PointerEventData pointerEventData)
