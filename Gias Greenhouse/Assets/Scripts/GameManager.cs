@@ -29,8 +29,7 @@ public class GameManager : MonoBehaviour
             plantPlaceholder.assignedPlantCurrentStage = Random.Range(0, 4);
             plantPlaceholder.assignedPlantSprite = plantPlaceholder.assignedPlant.stages[plantPlaceholder.assignedPlantCurrentStage];
             plantPlaceholder.GetComponentInChildren<SpriteRenderer>().sprite = plantPlaceholder.assignedPlantSprite;
-
-            //Debug.Log(plantPlaceholders[0].assignedPlantCurrentStage + " " + plantPlaceholders[0].assignedPlantSprite.name);
+            
             StartCoroutine(plantPlaceholder.GrowTime(plantPlaceholder.assignedPlant.growTime));
         }
 
@@ -140,4 +139,11 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(.1f);
         }
     } // End of DoCheck()
+
+    public void UpdateProduceInventoryUI()
+    {
+        textOfTomatoes.text = "" + numOfTomatoes;
+        textOfPotatoes.text = "" + numOfPotatoes;
+        textOfCarrots.text = "" + numOfCarrots;
+    }
 }
