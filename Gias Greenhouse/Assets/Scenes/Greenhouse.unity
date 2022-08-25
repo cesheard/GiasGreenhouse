@@ -18777,6 +18777,39 @@ MonoBehaviour:
   resolutionDropdown: {fileID: 267642930}
   graphicDropdown: {fileID: 2111802829}
   pauseMenuAnimator: {fileID: 124085928}
+  tomatoLabels:
+  - {fileID: 1383137803}
+  - {fileID: 453552803}
+  - {fileID: 376705278}
+  - {fileID: 1395338590}
+  - {fileID: 51066401}
+  - {fileID: 634341215}
+  - {fileID: 307450945}
+  - {fileID: 134067735}
+  - {fileID: 596070710}
+  tomatoLabelStartPos: {x: 0, y: 0, z: 0}
+  potatoLabels:
+  - {fileID: 1363285509}
+  - {fileID: 159082803}
+  - {fileID: 1661254925}
+  - {fileID: 1285921939}
+  - {fileID: 1697051056}
+  - {fileID: 1410840014}
+  - {fileID: 1180905030}
+  - {fileID: 493053464}
+  - {fileID: 2081829511}
+  potatoLabelStartPos: {x: 0, y: 0, z: 0}
+  carrotLabels:
+  - {fileID: 2122025866}
+  - {fileID: 358033674}
+  - {fileID: 919599009}
+  - {fileID: 1376840562}
+  - {fileID: 1606500195}
+  - {fileID: 1011880423}
+  - {fileID: 1750537772}
+  - {fileID: 2146933677}
+  - {fileID: 360300724}
+  carrotLabelStartPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1468788570
 GameObject:
   m_ObjectHideFlags: 0
@@ -22102,7 +22135,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1454091442}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: ResetScene
+        m_MethodName: ResetLabels
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

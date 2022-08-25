@@ -26,9 +26,20 @@ public class PauseMenu : MonoBehaviour
     public Animator pauseMenuAnimator;
     private bool firstPauseToggle = true;
 
+    public GameObject[] tomatoLabels;
+    public Vector3 tomatoLabelStartPos;
+    public GameObject[] potatoLabels;
+    public Vector3 potatoLabelStartPos;
+    public GameObject[] carrotLabels;
+    public Vector3 carrotLabelStartPos;
+
     // Start is called before the first frame update
     void Start()
     {
+        tomatoLabelStartPos = tomatoLabels[0].transform.position;
+        potatoLabelStartPos = potatoLabels[0].transform.position;
+        carrotLabelStartPos = carrotLabels[0].transform.position;
+
         scoreMenuUI.SetActive(false);
         gameIsPaused = false;
         optionsMenuUI.SetActive(false);
@@ -90,9 +101,20 @@ public class PauseMenu : MonoBehaviour
 
     } // End of GoTitleMenu()
 
-    public void ResetScene()
+    public void ResetLabels()
     {
-        SceneManager.LoadScene(1);      // Scene 1 is greenhouse scene in build settings
+        foreach(GameObject tomatoLabel in tomatoLabels)
+        {
+            tomatoLabel.transform.position = tomatoLabelStartPos;
+        }
+        foreach(GameObject potatoLabel in potatoLabels)
+        {
+            potatoLabel.transform.position = potatoLabelStartPos;
+        }
+        foreach(GameObject carrotLabel in carrotLabels)
+        {
+            carrotLabel.transform.position = carrotLabelStartPos;
+        }
 
     } // End of ResetScene()
 

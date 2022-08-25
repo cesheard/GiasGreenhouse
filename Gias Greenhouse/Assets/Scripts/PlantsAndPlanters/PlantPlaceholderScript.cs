@@ -36,18 +36,4 @@ public class PlantPlaceholderScript : MonoBehaviour
             readyToPick = true;
         }
     } // End of GrowTime(float growTime)
-
-    /*public void OnPointerClick(PointerEventData pointerEventData)
-    {
-        Debug.Log("Why?");
-        if (pointerEventData.button == PointerEventData.InputButton.Left && needsWater)
-        {
-            // Water the specific plant
-            needsWater = false;
-        }
-        if (pointerEventData.button == PointerEventData.InputButton.Left && !needsWater)
-        {
-            Debug.Log("Does not need water yet!");
-        }
-    }*/
 }
