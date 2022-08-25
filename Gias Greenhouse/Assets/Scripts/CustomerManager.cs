@@ -4,7 +4,7 @@ using TMPro;
 
 public class CustomerManager : MonoBehaviour
 {
-    public GameManager gameManger;
+    [SerializeField] public GameManager gameManger;
 
     public Customer[] listOfCustomers;
     public string[] potentialCustomerNames;
@@ -19,7 +19,7 @@ public class CustomerManager : MonoBehaviour
 
     private void Awake()
     {
-        gameManger = FindObjectOfType<GameManager>();
+        //gameManger = FindObjectOfType<GameManager>();
 
         foreach(Customer customer in listOfCustomers)
         {
@@ -39,16 +39,18 @@ public class CustomerManager : MonoBehaviour
 
     public void FufillRequest()
     {
+        // Make sure UI is accurate
+        gameManger.UpdateProduceInventoryUI();
+
         // The player has enough produce for the request
         if (gameManger.numOfTomatoes >= listOfCustomers[currentCustomer].numWantedTomatoes && gameManger.numOfPotatoes >= listOfCustomers[currentCustomer].numWantedPotatoes && gameManger.numOfCarrots >= listOfCustomers[currentCustomer].numWantedCarrots)
         {
-            gameManger.UpdateProduceInventoryUI();
-
             if (currentCustomer < listOfCustomers.Length-1)
             {
                 gameManger.numOfTomatoes -= listOfCustomers[currentCustomer].numWantedTomatoes;
                 gameManger.numOfPotatoes -= listOfCustomers[currentCustomer].numWantedPotatoes;
                 gameManger.numOfCarrots -= listOfCustomers[currentCustomer].numWantedCarrots;
+                gameManger.UpdateProduceInventoryUI();
 
                 currentCustomer++;
                 customerText.text = listOfCustomers[currentCustomer].customerName + " would like:";

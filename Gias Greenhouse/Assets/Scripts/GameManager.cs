@@ -142,9 +142,10 @@ public class GameManager : MonoBehaviour
 
     public void UpdateProduceInventoryUI()
     {
-        textOfTomatoes.text = "" + numOfTomatoes;
-        textOfPotatoes.text = "" + numOfPotatoes;
-        textOfCarrots.text = "" + numOfCarrots;
+        Debug.Log("Update is being called");
+        textOfTomatoes.text = numOfTomatoes.ToString();
+        textOfPotatoes.text = numOfPotatoes.ToString();
+        textOfCarrots.text = numOfCarrots.ToString();
 
     } // End of UpdateProduceInventoryUI()
 }

@@ -13,7 +13,6 @@ public class PlantSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
         {
             if (plantPlaceholder.needsWater){
                 // Water the specific plant
-                Debug.Log("Trying to water plant");
                 plantPlaceholder.needsWater = false;
                 Cursor.SetCursor(default, Vector2.zero, CursorMode.ForceSoftware);
             }
@@ -21,14 +20,9 @@ public class PlantSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
             // Pick the specific plant
             if (plantPlaceholder.readyToPick)
             {
-                Debug.Log("Trying to pick to plant");
                 plantPlaceholder.readyToPick = false;
                 Cursor.SetCursor(default, Vector2.zero, CursorMode.ForceSoftware);
             }
-        }
-        if (pointerEventData.button == PointerEventData.InputButton.Left && !plantPlaceholder.needsWater /*&& wateringCan.attachedToCursor*/)
-        {
-            Debug.Log("Does not need water yet!");
         }
 
     } // End of OnPointerClick(PointerEventData pointerEventData)

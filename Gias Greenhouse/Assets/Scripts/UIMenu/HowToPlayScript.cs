@@ -5,11 +5,11 @@ public class HowToPlayScript : MonoBehaviour
     public GameObject hTP_Page1;
     public GameObject hTP_Page2;
 
-    private void OnLevelWasLoaded(int level)
+    private void Start()
     {
         GoToPage1();
 
-    } // End of OnLevelWasLoaded(int level)
+    } // End of Start()
 
     public void GoToPage2()
     {

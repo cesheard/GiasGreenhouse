@@ -8901,7 +8901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2b0d1765077f64e886663b9565c294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManger: {fileID: 0}
+  gameManger: {fileID: 637987735}
   listOfCustomers:
   - {fileID: 974681253}
   - {fileID: 702295102}
