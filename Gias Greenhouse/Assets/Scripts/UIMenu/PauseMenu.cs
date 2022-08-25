@@ -33,6 +33,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject[] carrotLabels;
     public Vector3 carrotLabelStartPos;
 
+    public DropSlot[] labelDropSlots;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -116,7 +118,12 @@ public class PauseMenu : MonoBehaviour
             carrotLabel.transform.position = carrotLabelStartPos;
         }
 
-    } // End of ResetScene()
+        foreach(DropSlot labelSlot in labelDropSlots)
+        {
+            labelSlot.labelName = "";
+        }
+
+    } // End of ResetLabels()
 
     public void ToggleIDBook()
     {

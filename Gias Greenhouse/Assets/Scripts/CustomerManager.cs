@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -16,7 +15,6 @@ public class CustomerManager : MonoBehaviour
     public TMP_Text customerPotatoText;
     public TMP_Text customerCarrotText;
 
-    public TMP_Text feedbackText;
     [SerializeField] public CanvasGroup feedbackCanvasGroup;
 
     private void Awake()
@@ -36,13 +34,13 @@ public class CustomerManager : MonoBehaviour
         customerTomatoText.text = listOfCustomers[0].numWantedTomatoes.ToString();
         customerPotatoText.text = listOfCustomers[0].numWantedPotatoes.ToString();
         customerCarrotText.text = listOfCustomers[0].numWantedCarrots.ToString();
-    }
+
+    } // End of Awake()
 
     public void FufillRequest()
     {
-        if (gameManger.numOfTomatoes >= listOfCustomers[currentCustomer].numWantedTomatoes &&
-            gameManger.numOfPotatoes >= listOfCustomers[currentCustomer].numWantedPotatoes &&
-            gameManger.numOfCarrots >= listOfCustomers[currentCustomer].numWantedCarrots)
+        // The player has enough produce for the request
+        if (gameManger.numOfTomatoes >= listOfCustomers[currentCustomer].numWantedTomatoes && gameManger.numOfPotatoes >= listOfCustomers[currentCustomer].numWantedPotatoes && gameManger.numOfCarrots >= listOfCustomers[currentCustomer].numWantedCarrots)
         {
             gameManger.UpdateProduceInventoryUI();
 
@@ -69,17 +67,18 @@ public class CustomerManager : MonoBehaviour
         }
         else
         {
-            //feedbackText.text = "You don't have enough produce to fufill the request";
             StartCoroutine(RequestFeedback());
         }
-    }
+
+    } // End of FufillRequest()
 
     IEnumerator RequestFeedback()
     {
         feedbackCanvasGroup.alpha = 1f;
         yield return new WaitForSeconds(2f);
         StartCoroutine(FadeOut());
-    }
+
+    } // End of RequestFeedback()
 
     IEnumerator FadeOut()
     {
@@ -88,6 +87,7 @@ public class CustomerManager : MonoBehaviour
             feedbackCanvasGroup.alpha -= 0.2f;
             yield return new WaitForSeconds(0.1f);
         }
-    }
+
+    } // End of FadeOut()
 
 }

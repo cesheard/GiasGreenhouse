@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class PlantSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] public PlantPlaceholderScript plantPlaceholder;
-    //[SerializeField] public ClickCursor wateringCan;
     public Texture2D wateringCanCursor;
     public Texture2D harvestCursor;
 
@@ -33,7 +30,8 @@ public class PlantSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
         {
             Debug.Log("Does not need water yet!");
         }
-    }
+
+    } // End of OnPointerClick(PointerEventData pointerEventData)
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -49,10 +47,12 @@ public class PlantSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
         {
             Cursor.SetCursor(default, Vector2.zero, CursorMode.ForceSoftware);
         }
-    }
+
+    } // End of OnPointerEnter(PointerEventData eventData)
 
     public void OnPointerExit(PointerEventData eventData)
     {
         Cursor.SetCursor(default, Vector2.zero, CursorMode.ForceSoftware);
-    }
+
+    } // End of OnPointerEnter(PointerEventData eventData)
 }

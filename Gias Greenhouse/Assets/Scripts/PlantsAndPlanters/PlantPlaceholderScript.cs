@@ -19,6 +19,7 @@ public class PlantPlaceholderScript : MonoBehaviour
     public bool CheckLabels()
     {
         return (labelSlot.labelName.Equals(assignedPlant.name));
+
     } // End of CheckLabels()
 
     public IEnumerator GrowTime(float growTime)
@@ -35,5 +36,6 @@ public class PlantPlaceholderScript : MonoBehaviour
         {
             readyToPick = true;
         }
+
     } // End of GrowTime(float growTime)
 }

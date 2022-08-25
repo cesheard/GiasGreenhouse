@@ -4558,7 +4558,6 @@ GameObject:
   - component: {fileID: 307326758}
   - component: {fileID: 307326760}
   - component: {fileID: 307326759}
-  - component: {fileID: 307326761}
   - component: {fileID: 307326762}
   m_Layer: 5
   m_Name: PlantSlot
@@ -4584,8 +4583,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -154}
-  m_SizeDelta: {x: 135, y: 330}
+  m_AnchoredPosition: {x: 0, y: -98.999985}
+  m_SizeDelta: {x: 135, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &307326759
 MonoBehaviour:
@@ -4622,19 +4621,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 307326757}
   m_CullTransparentMesh: 1
---- !u!114 &307326761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 307326757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f6f9979b369a443ae4cb13b25ccb7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  labelName: 
 --- !u!114 &307326762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6452,7 +6438,6 @@ GameObject:
   - component: {fileID: 429116542}
   - component: {fileID: 429116546}
   - component: {fileID: 429116545}
-  - component: {fileID: 429116544}
   - component: {fileID: 429116543}
   m_Layer: 5
   m_Name: PlantSlot (8)
@@ -6478,8 +6463,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 585.4, y: 225}
-  m_SizeDelta: {x: 135, y: 250}
+  m_AnchoredPosition: {x: 585.4, y: 273}
+  m_SizeDelta: {x: 135, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &429116543
 MonoBehaviour:
@@ -6496,19 +6481,6 @@ MonoBehaviour:
   plantPlaceholder: {fileID: 1634450562}
   wateringCanCursor: {fileID: 2800000, guid: b675785b6d04e6245b36c8b38c8c9c0c, type: 3}
   harvestCursor: {fileID: 2800000, guid: 455d30fad56916045839f39fd36f80eb, type: 3}
---- !u!114 &429116544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429116541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f6f9979b369a443ae4cb13b25ccb7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  labelName: 
 --- !u!114 &429116545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8501,7 +8473,6 @@ GameObject:
   - component: {fileID: 614447628}
   - component: {fileID: 614447632}
   - component: {fileID: 614447631}
-  - component: {fileID: 614447630}
   - component: {fileID: 614447629}
   m_Layer: 5
   m_Name: PlantSlot (1)
@@ -8527,8 +8498,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -165, y: -154}
-  m_SizeDelta: {x: 135, y: 330}
+  m_AnchoredPosition: {x: -165, y: -98.999985}
+  m_SizeDelta: {x: 135, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &614447629
 MonoBehaviour:
@@ -8545,19 +8516,6 @@ MonoBehaviour:
   plantPlaceholder: {fileID: 2092215610}
   wateringCanCursor: {fileID: 2800000, guid: b675785b6d04e6245b36c8b38c8c9c0c, type: 3}
   harvestCursor: {fileID: 2800000, guid: 455d30fad56916045839f39fd36f80eb, type: 3}
---- !u!114 &614447630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 614447627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f6f9979b369a443ae4cb13b25ccb7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  labelName: 
 --- !u!114 &614447631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8963,7 +8921,6 @@ MonoBehaviour:
   customerTomatoText: {fileID: 1723660838}
   customerPotatoText: {fileID: 754269294}
   customerCarrotText: {fileID: 1660226127}
-  feedbackText: {fileID: 55526649}
   feedbackCanvasGroup: {fileID: 55526648}
 --- !u!1 &660569798
 GameObject:
@@ -9111,7 +9068,6 @@ GameObject:
   - component: {fileID: 665495717}
   - component: {fileID: 665495721}
   - component: {fileID: 665495720}
-  - component: {fileID: 665495719}
   - component: {fileID: 665495718}
   m_Layer: 5
   m_Name: PlantSlot (2)
@@ -9137,8 +9093,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 165, y: -154}
-  m_SizeDelta: {x: 135, y: 330}
+  m_AnchoredPosition: {x: 165, y: -99}
+  m_SizeDelta: {x: 135, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &665495718
 MonoBehaviour:
@@ -9155,19 +9111,6 @@ MonoBehaviour:
   plantPlaceholder: {fileID: 756867387}
   wateringCanCursor: {fileID: 2800000, guid: b675785b6d04e6245b36c8b38c8c9c0c, type: 3}
   harvestCursor: {fileID: 2800000, guid: 455d30fad56916045839f39fd36f80eb, type: 3}
---- !u!114 &665495719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665495716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f6f9979b369a443ae4cb13b25ccb7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  labelName: 
 --- !u!114 &665495720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9349,7 +9292,6 @@ GameObject:
   - component: {fileID: 674586731}
   - component: {fileID: 674586735}
   - component: {fileID: 674586734}
-  - component: {fileID: 674586733}
   - component: {fileID: 674586732}
   m_Layer: 5
   m_Name: PlantSlot (5)
@@ -9375,8 +9317,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -423.6, y: 0}
-  m_SizeDelta: {x: 135, y: 250}
+  m_AnchoredPosition: {x: -423.6, y: 58}
+  m_SizeDelta: {x: 135, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &674586732
 MonoBehaviour:
@@ -9393,19 +9335,6 @@ MonoBehaviour:
   plantPlaceholder: {fileID: 1535563591}
   wateringCanCursor: {fileID: 2800000, guid: b675785b6d04e6245b36c8b38c8c9c0c, type: 3}
   harvestCursor: {fileID: 2800000, guid: 455d30fad56916045839f39fd36f80eb, type: 3}
---- !u!114 &674586733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 674586730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f6f9979b369a443ae4cb13b25ccb7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  labelName: 
 --- !u!114 &674586734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10657,7 +10586,6 @@ GameObject:
   - component: {fileID: 792895798}
   - component: {fileID: 792895802}
   - component: {fileID: 792895801}
-  - component: {fileID: 792895800}
   - component: {fileID: 792895799}
   m_Layer: 5
   m_Name: PlantSlot (4)
@@ -10683,8 +10611,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 744, y: 0}
-  m_SizeDelta: {x: 135, y: 250}
+  m_AnchoredPosition: {x: 744, y: 57.999985}
+  m_SizeDelta: {x: 135, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &792895799
 MonoBehaviour:
@@ -10701,19 +10629,6 @@ MonoBehaviour:
   plantPlaceholder: {fileID: 411188681}
   wateringCanCursor: {fileID: 2800000, guid: b675785b6d04e6245b36c8b38c8c9c0c, type: 3}
   harvestCursor: {fileID: 2800000, guid: 455d30fad56916045839f39fd36f80eb, type: 3}
---- !u!114 &792895800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 792895797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f6f9979b369a443ae4cb13b25ccb7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  labelName: 
 --- !u!114 &792895801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12624,7 +12539,6 @@ GameObject:
   - component: {fileID: 939768138}
   - component: {fileID: 939768142}
   - component: {fileID: 939768141}
-  - component: {fileID: 939768140}
   - component: {fileID: 939768139}
   m_Layer: 5
   m_Name: PlantSlot (3)
@@ -12650,8 +12564,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 426.1, y: 0}
-  m_SizeDelta: {x: 135, y: 250}
+  m_AnchoredPosition: {x: 426.1, y: 57.999985}
+  m_SizeDelta: {x: 135, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &939768139
 MonoBehaviour:
@@ -12668,19 +12582,6 @@ MonoBehaviour:
   plantPlaceholder: {fileID: 1792417096}
   wateringCanCursor: {fileID: 2800000, guid: b675785b6d04e6245b36c8b38c8c9c0c, type: 3}
   harvestCursor: {fileID: 2800000, guid: 455d30fad56916045839f39fd36f80eb, type: 3}
---- !u!114 &939768140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 939768137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f6f9979b369a443ae4cb13b25ccb7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  labelName: 
 --- !u!114 &939768141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13331,7 +13232,6 @@ GameObject:
   - component: {fileID: 1031034974}
   - component: {fileID: 1031034978}
   - component: {fileID: 1031034977}
-  - component: {fileID: 1031034976}
   - component: {fileID: 1031034975}
   m_Layer: 5
   m_Name: PlantSlot (6)
@@ -13357,8 +13257,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -761.9, y: 0}
-  m_SizeDelta: {x: 135, y: 250}
+  m_AnchoredPosition: {x: -761.9, y: 57.999985}
+  m_SizeDelta: {x: 135, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1031034975
 MonoBehaviour:
@@ -13375,19 +13275,6 @@ MonoBehaviour:
   plantPlaceholder: {fileID: 1077648499}
   wateringCanCursor: {fileID: 2800000, guid: b675785b6d04e6245b36c8b38c8c9c0c, type: 3}
   harvestCursor: {fileID: 2800000, guid: 455d30fad56916045839f39fd36f80eb, type: 3}
---- !u!114 &1031034976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1031034973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f6f9979b369a443ae4cb13b25ccb7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  labelName: 
 --- !u!114 &1031034977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18810,6 +18697,16 @@ MonoBehaviour:
   - {fileID: 2146933677}
   - {fileID: 360300724}
   carrotLabelStartPos: {x: 0, y: 0, z: 0}
+  labelDropSlots:
+  - {fileID: 1567483162}
+  - {fileID: 824236428}
+  - {fileID: 76738658}
+  - {fileID: 77321436}
+  - {fileID: 1429295403}
+  - {fileID: 385121902}
+  - {fileID: 123792700}
+  - {fileID: 555617473}
+  - {fileID: 475786172}
 --- !u!1 &1468788570
 GameObject:
   m_ObjectHideFlags: 0
@@ -24471,7 +24368,6 @@ GameObject:
   - component: {fileID: 1984705376}
   - component: {fileID: 1984705380}
   - component: {fileID: 1984705379}
-  - component: {fileID: 1984705378}
   - component: {fileID: 1984705377}
   m_Layer: 5
   m_Name: PlantSlot (7)
@@ -24497,8 +24393,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -583.7, y: 225}
-  m_SizeDelta: {x: 135, y: 250}
+  m_AnchoredPosition: {x: -583.7, y: 273}
+  m_SizeDelta: {x: 135, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1984705377
 MonoBehaviour:
@@ -24515,19 +24411,6 @@ MonoBehaviour:
   plantPlaceholder: {fileID: 1006199968}
   wateringCanCursor: {fileID: 2800000, guid: b675785b6d04e6245b36c8b38c8c9c0c, type: 3}
   harvestCursor: {fileID: 2800000, guid: 455d30fad56916045839f39fd36f80eb, type: 3}
---- !u!114 &1984705378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1984705375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f6f9979b369a443ae4cb13b25ccb7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  labelName: 
 --- !u!114 &1984705379
 MonoBehaviour:
   m_ObjectHideFlags: 0

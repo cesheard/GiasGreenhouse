@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
     public int numOfCarrots;
     public TMP_Text textOfCarrots;
 
-
     private void Awake()
     {
         // Randomize the assigned plants and plant stages to the pots (not randomizing the planters)
@@ -138,6 +137,7 @@ public class GameManager : MonoBehaviour
 
             yield return new WaitForSeconds(.1f);
         }
+
     } // End of DoCheck()
 
     public void UpdateProduceInventoryUI()
@@ -145,5 +145,6 @@ public class GameManager : MonoBehaviour
         textOfTomatoes.text = "" + numOfTomatoes;
         textOfPotatoes.text = "" + numOfPotatoes;
         textOfCarrots.text = "" + numOfCarrots;
-    }
+
+    } // End of UpdateProduceInventoryUI()
 }
