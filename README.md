@@ -1,5 +1,5 @@
 # GiasGreenhouse
-A coding challenge for a potential company. The initials project was a two day sprint, which later had a second sprint for revisions (in a seperate branch) that lasted about 3 days.
+A coding challenge for a potential company. The initial project was a two day sprint, which later had a second sprint for revisions (in a seperate branch) that lasted about 3 days.
 
 Inspired by Strange Horticulture.
 
