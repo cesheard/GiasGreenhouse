@@ -1,7 +1,7 @@
 # GiasGreenhouse
 A coding challenge for a potential company. The initial project was a two day sprint, which later had a second sprint for revisions (in a seperate branch) that lasted about 3 days.
 
-Inspired by Strange Horticulture.
+The prompt was a theme of vegetables and a scoring system. Inspired by Strange Horticulture.
 
 Assets Used/References:
 
